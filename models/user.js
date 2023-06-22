@@ -1,4 +1,5 @@
 import { Schema, model, models } from 'mongoose';
+import CircleWalletSchema from './circle_wallet';
 
 const UserSchema = new Schema({
   email: {
@@ -13,7 +14,11 @@ const UserSchema = new Schema({
   },
   image: {
     type: String,
-  }
+  },
+  wallets: [{
+    type: Schema.Types.ObjectId,
+    ref: "CircleWallet",
+  }],
 });
 
 const User = models.User || model("User", UserSchema);

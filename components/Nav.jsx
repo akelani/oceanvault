@@ -28,19 +28,30 @@ const Nav = () => {
           height={30}
           className='object-contain'
         />
-        <p className='logo_text'>Promptopia</p>
+        <p className='logo_text'>OceanVault</p>
       </Link>
 
       {/* Desktop Navigation */}
       <div className='sm:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
-            <Link href='/create-prompt' className='black_btn'>
+            {/* <Link href='/create-prompt' className='black_btn'>
               Create Post
-            </Link>
+            </Link> */}
 
             <button type='button' onClick={signOut} className='outline_btn'>
               Sign Out
+            </button>
+
+            <button type='button' onClick={() => { }} className='outline_btn'>
+              {session?.user.wallets.map(wallet => (
+                <ul key={wallet.id}>{wallet.depositAddresses.map(depositAddress => (
+                  <ul key={depositAddress.id}>
+                    <li>Chain: {depositAddress.chain}, Currency: {depositAddress.currency}</li>
+                    <li>{depositAddress.address}</li>
+                  </ul>
+                ))}</ul>
+              ))}
             </button>
 
             <Link href='/profile'>
@@ -94,13 +105,13 @@ const Nav = () => {
                 >
                   My Profile
                 </Link>
-                <Link
+                {/* <Link
                   href='/create-prompt'
                   className='dropdown_link'
                   onClick={() => setToggleDropdown(false)}
                 >
                   Create Prompt
-                </Link>
+                </Link> */}
                 <button
                   type='button'
                   onClick={() => {

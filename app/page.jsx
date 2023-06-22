@@ -1,4 +1,5 @@
-import NFTGrid from '@components/NFTGrid';
+import { CryptoElements, OnrampElement } from '@components/StripeCryptoElements';
+import StripeOnramp from '@components/StripeOnramp';
 
 const Home = () => {
   return (
@@ -11,8 +12,7 @@ const Home = () => {
       <p className="desc text-center">
         OceanVault is the world's smallest web3 marketplace for NFTs and crypto collectibles. Browse, create, buy, sell, and auction NFTs using OceanVault today.
       </p>
-
-      <NFTGrid />
+      <StripeOnramp />
     </section>
   )
 }

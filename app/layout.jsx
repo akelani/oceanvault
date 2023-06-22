@@ -11,6 +11,11 @@ export const metadata = {
 const RootLayout = ({ children }) => {
     return (
         <html lang='en'>
+            <head>
+                <title>Onramp</title>
+                <script src="https://js.stripe.com/v3/"></script>
+                <script src="https://crypto-js.stripe.com/crypto-onramp-outer.js"></script>
+            </head>
             <body>
                 <Provider>
                     <div className='main'>
